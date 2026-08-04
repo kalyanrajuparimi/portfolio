@@ -1,0 +1,140 @@
+/* ===========================
+   MOBILE DEVICES
+=========================== */
+
+@media (max-width:768px){
+
+.container{
+    width:92%;
+}
+
+/* Navbar */
+
+.navbar{
+
+    width:95%;
+    padding:16px 20px;
+
+}
+
+.nav-links{
+
+    display:none;
+
+}
+
+.resume-btn{
+
+    display:none;
+
+}
+
+/* Hero */
+
+.hero{
+
+    padding:120px 0 70px;
+
+}
+
+.hero-container{
+
+    flex-direction:column-reverse;
+
+    text-align:center;
+
+    gap:40px;
+
+}
+
+.hero-text{
+
+    width:100%;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+.hero h2{
+
+    font-size:22px;
+
+}
+
+.hero-description{
+
+    font-size:16px;
+
+    max-width:100%;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    width:280px;
+
+}
+
+/* About */
+
+.about-container{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.about-image img{
+
+    max-width:280px;
+
+}
+
+.about-info{
+
+    grid-template-columns:1fr;
+
+}
+
+/* Skills */
+
+.skills-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+/* Projects */
+
+.projects-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+/* Contact */
+
+.contact-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.contact{
+
+    text-align:center;
+
+}
+
+}
