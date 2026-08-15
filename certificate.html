@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Certifications | Parimi Kalyan Raju</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="css/animations.css">
+
+    <!-- Certification CSS -->
+    <style>
+
+        .certifications-page {
+            min-height: 100vh;
+            padding: 150px 0 80px;
+        }
+
+        .certifications-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .certifications-header span {
+            display: block;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .certifications-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .certifications-header p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .certification-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .certificate-card {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 24px;
+            padding: 15px;
+            box-shadow: 0 15px 40px rgba(74, 74, 74, 0.10);
+            transition: 0.35s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(74, 74, 74, 0.18);
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 17px;
+            display: block;
+        }
+
+        .certificate-info {
+            padding: 18px 8px 8px;
+        }
+
+        .certificate-info h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 19px;
+            margin-bottom: 6px;
+        }
+
+        .certificate-info p {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        /* IMAGE VIEWER */
+
+        .certificate-viewer {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            z-index: 9999;
+        }
+
+        .certificate-viewer.active {
+            display: flex;
+        }
+
+        .certificate-viewer img {
+            max-width: 90%;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .viewer-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+
+            width: 48px;
+            height: 48px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: white;
+            color: var(--primary);
+
+            font-size: 28px;
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .viewer-close:hover {
+            background: var(--accent);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .certifications-page {
+                padding: 130px 20px 60px;
+            }
+
+            .certifications-header {
+                margin-bottom: 40px;
+            }
+
+            .certifications-header h1 {
+                font-size: 38px;
+            }
+
+            .certifications-header p {
+                font-size: 15px;
+            }
+
+            .certification-gallery {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .certificate-card img {
+                height: auto;
+                max-height: 400px;
+                object-fit: contain;
+            }
+
+            .certificate-viewer {
+                padding: 15px;
+            }
+
+            .certificate-viewer img {
+                max-width: 96%;
+                max-height: 80vh;
+            }
+
+            .viewer-close {
+                top: 20px;
+                right: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="container">
+
+            <a href="index.html" class="logo">
+                PKR
+            </a>
+
+            <div class="nav-links">
+
+                <a href="index.html#home">
+                    Home
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#skills">
+                    Skills
+                </a>
+
+                <a href="index.html#projects">
+                    Projects
+                </a>
+
+                <a href="certifications.html">
+                    Certifications
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+            </div>
+
+            <a href="assets/resume.pdf"
+               class="resume-btn"
+               target="_blank">
+
+                Resume
+
+            </a>
+
+            <!-- Mobile Menu Button -->
+
+            <button class="menu-toggle"
+                    id="menuToggle">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- CERTIFICATIONS -->
+
+    <main class="certifications-page">
+
+        <div class="container">
+
+            <div class="certifications-header">
+
+                <span>CERTIFICATIONS</span>
+
+                <h1>My Learning Journey</h1>
+
+                <p>
+                    A collection of certifications and achievements
+                    earned throughout my learning and professional journey.
+                </p>
+
+            </div>
+
+
+            <!-- GALLERY -->
+
+            <div class="certification-gallery">
+
+
+                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate1.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate1.jpg"
+                        alt="Certification 1">
+
+                    <div class="certificate-info">
+
+                        <h3>UDGAMA 2026</h3>
+
+                        <p>Proud to have participated in UDGAMA 2026 – IEEE Guntur Subsection Student Congress, organized by the IEEE Hyderabad Section Student Activities Committee in association with the IEEE Guntur Subsection.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate2.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate2.jpg"
+                        alt="Certification 2">
+
+                    <div class="certificate-info">
+
+                        <h3>Summer Internship Certificate at SSN chennai</h3>
+
+                        <p>This internship gave me valuable exposure to healthcare data analytics, strengthened my analytical thinking, and provided practical insights into solving real-world problems using data. I am sincerely grateful to Dr. B. Geethanjali for her guidance and mentorship throughout this journey
+
+</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate3.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate3.jpg"
+                        alt="Certification 3">
+
+                    <div class="certificate-info">
+
+                        <h3>Internship Certificate(CSC)</h3>
+
+                        <p>I am pleased to announce that I have successfully completed the Business Intelligence using Power BI Internship under the APSCHE Student Internship Initiative, offered by the Council for Skills and Competencies (CSC India).</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate4.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate4.jpg"
+                        alt="Certification 4">
+
+                    <div class="certificate-info">
+
+                        <h3> HackFusion 2026</h3>
+
+                        <p>Proud to share that our team successfully presented “AlertLink – A Women Safety Alert System” at HackFusion 2026 – International Hackathon & Project Expo </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate5.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate5.jpg"
+                        alt="Certification 5">
+
+                    <div class="certificate-info">
+
+                        <h3>Internship Certificate(Main Crafts Technologies)</h3>
+
+                        <p>This internship gave me valuable exposure to  data analysis using Python, strengthened my analytical thinking, and provided practical insights into solving real-world problems using data. I am sincerely grateful to Dr. B. Geethanjali for her guidance and mentorship throughout this journey
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate6.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate6.jpg"
+                        alt="Certification 6">
+
+                    <div class="certificate-info">
+
+                        <h3>SITAR 2K26</h3>
+
+                        <p>Grateful to have participated in Model Presentation at SITAR-2K26 – A National Level Techno-Cultural Fest conducted by PVPSIT</p>
+
+                    </div>
+
+                </div>
+                                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate7.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate7.jpg"
+                        alt="Certification 4">
+
+                    <div class="certificate-info">
+
+                        <h3>SUNRISE-2K26</h3>
+
+                        <p>Proud to have participated in the Project Expo at SUNRISE-2K26, NRI Institute of Technology.
+Grateful for the opportunity to showcase innovation, learn from peers, and gain valuable experience</p>
+
+                    </div>
+
+                </div>
+                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate8.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate8.jpg"
+                        alt="Certification 4">
+
+                    <div class="certificate-info">
+
+                        <h3>SAMIKSHA 2026</h3>
+
+                        <p>Had a wonderful experience attending the Samiksha2k26 at Andhra Loyola college, Vijayawada 
+Well organised by Department of MCA</p>
+
+                    </div>
+
+                </div>
+                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate9.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate9.jpg"
+                        alt="Certification 4">
+
+                    <div class="certificate-info">
+
+                        <h3>ISP DIRECT ENTRY Certificate</h3>
+
+                        <p>Excited to announce that I have successfully completed the Internshala Student Partner Program and received a Direct Entry Certificate!
+ This journey helped me enhance my leadership, communication, and networking skills.</p>
+
+                    </div>
+
+                </div>
+                <div class="certificate-card"
+                     data-image="assets/images/certifications/certificate10.jpg">
+
+                    <img
+                        src="assets/images/certifications/certificate10.jpg"
+                        alt="Certification 4">
+
+                    <div class="certificate-info">
+
+                        <h3>Skelo AI workshop</h3>
+
+                        <p>I successfully completed a one-week workshop at Skelo AI. Gained valuable insights into Competitive coding on Data Structures. Looking forward to applying this knowledge in future projects.</p>
+
+                    </div>
+
+                </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- IMAGE VIEWER -->
+
+    <div class="certificate-viewer"
+         id="certificateViewer">
+
+        <button class="viewer-close"
+                id="viewerClose">
+
+            ×
+
+        </button>
+
+        <img id="viewerImage"
+             src=""
+             alt="Certificate Preview">
+
+    </div>
+
+
+    <!-- Existing JavaScript -->
+
+    <script src="js/script.js"></script>
+
+
+    <!-- Certification JavaScript -->
+
+    <script>
+
+        const certificateCards =
+            document.querySelectorAll(".certificate-card");
+
+        const viewer =
+            document.getElementById("certificateViewer");
+
+        const viewerImage =
+            document.getElementById("viewerImage");
+
+        const viewerClose =
+            document.getElementById("viewerClose");
+
+
+        certificateCards.forEach(card => {
+
+            card.addEventListener("click", () => {
+
+                const image =
+                    card.getAttribute("data-image");
+
+                viewerImage.src = image;
+
+                viewer.classList.add("active");
+
+                document.body.style.overflow = "hidden";
+
+            });
+
+        });
+
+
+        function closeViewer() {
+
+            viewer.classList.remove("active");
+
+            viewerImage.src = "";
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        viewerClose.addEventListener(
+            "click",
+            closeViewer
+        );
+
+
+        viewer.addEventListener("click", (event) => {
+
+            if (event.target === viewer) {
+
+                closeViewer();
+
+            }
+
+        });
+
+
+        document.addEventListener("keydown", (event) => {
+
+            if (event.key === "Escape") {
+
+                closeViewer();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
